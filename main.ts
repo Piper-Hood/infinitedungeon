@@ -10,25 +10,7 @@ namespace ConnectionKind {
     export const Door3 = ConnectionKind.create()
     export const Door4 = ConnectionKind.create()
 }
-/**
- * spawn variable for room like the one for the alien?
- */
-/**
- * new tilemap loads every time, instead of current level, when going through back door
- */
-/**
- * Add if map / 2 = 0, if map / 5 = 0, etc. spawn 2/boss
- */
-/**
- * velocity slows around corners
- */
-/**
- * https://www.youtube.com/watch?v=NBdkNyJegds
- * 
- * Set infinite levels with tilemaps
- */
 function map1end () {
-    info.setLife(3)
     tiles.setTileAt(tiles.getTileLocation(4, 8), assets.tile`tile16`)
     pause(1000)
     tiles.setTileAt(tiles.getTileLocation(4, 8), assets.tile`tile3`)
@@ -1751,12 +1733,6 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSp
         mySprite.setImage(spriteSheet[0])
     }
 })
-function alienBlink () {
-	
-}
-function knockback () {
-	
-}
 function shielddown () {
     animation.runImageAnimation(
     magicshield,
@@ -1910,9 +1886,6 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
     pause(1000)
     mySprite.setImage(spriteSheet[0])
 })
-function nextlevel () {
-	
-}
 function createPlayer () {
     mySprite = sprites.create(img`
         . . . . . . 8 8 . . . . . . . . 
